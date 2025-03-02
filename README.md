@@ -1,6 +1,29 @@
-# \<invincible-design-system>
 
-This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+# Invincible Design System
+
+## Overview
+
+The Invincible Design System is a framework-agnostic design system built using [Lit](https://lit.dev/). It follows atomic design principles as outlined by Brad Frost, providing a scalable and maintainable approach to building user interfaces.
+
+This project was scaffolded using [Open Web Components (open-wc)](https://open-wc.org/), and utilizes Jest for testing and Storybook for component documentation and showcasing.
+
+This webcomponents in this library follow the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+
+## Features
+
+- Framework-agnostic components built with Lit
+- Atomic Design methodology
+- Jest for unit and integration testing
+- Storybook for component documentation and visual testing
+- TypeScript support
+- Linting and formatting with ESLint and Prettier
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later recommended)
+- npm (v6 or later)
 
 ## Installation
 
