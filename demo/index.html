@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -9,22 +10,38 @@
     }
   </style>
 </head>
+
 <body>
   <div id="demo"></div>
 
   <script type="module">
     import { html, render } from 'lit';
-    import '../dist/src/invincible-design-system.js';
-
+    import '../dist/src/InvincibleDesignSystem.js';
+    import '../dist/src/components/button.component.js';
+    
+    const handleClick = (evt)=> {
+      alert('clicked!');
+    }
+    
     const header = 'Hello owc World!';
     render(
       html`
-        <invincible-design-system .header=${header}>
+      <h2> Test Component </h2>  
+      <invincible-design-system .header=${header}>
           some light-dom
         </invincible-design-system>
+        
+      <h2> Button Component </h2>  
+        <invincible-button  @button-click="${handleClick}">Default Button</invincible-button>
+        <invincible-button variant="secondary">Secondary Button</invincible-button>
+        <invincible-button variant="outline" size="large">Large Outline Button</invincible-button>
+        <invincible-button disabled>Disabled Button</invincible-button>
       `,
       document.querySelector('#demo')
     );
+
+
   </script>
 </body>
+
 </html>

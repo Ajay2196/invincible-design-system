@@ -1,14 +1,17 @@
-import { html, css, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
+import { html, css, CSSResult } from 'lit';
+import { property, customElement } from 'lit/decorators.js';
+import { BaseComponent } from './components/BaseComponent.js';
 
-export class InvincibleDesignSystem extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      padding: 25px;
-      color: var(--invincible-design-system-text-color, #000);
-    }
-  `;
+@customElement('invincible-design-system')
+export class InvincibleDesignSystem extends BaseComponent {
+  static styles = [
+    BaseComponent.styles,
+    css`
+      h2 {
+        background-color: yellow;
+      }
+    ` as CSSResult,
+  ];
 
   @property({ type: String }) header = 'Hey there';
 
@@ -20,8 +23,12 @@ export class InvincibleDesignSystem extends LitElement {
 
   render() {
     return html`
-      <h2>${this.header} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+      <div>
+        <h2>${this.header} Nr. ${this.counter}!</h2>
+        <invincible-button @button-click="${this.__increment}"
+          >Increment</invincible-button
+        >
+      </div>
     `;
   }
 }
